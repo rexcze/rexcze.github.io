@@ -1,265 +1,249 @@
-<!DOCTYPE html>
-<html lang="cs">
+<!doctype html>
+<html lang="en" class="en" data-type="service" data-radius="soft" data-buttons="block" data-motion>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jakub Bittner — Security Infrastructure Lead</title>
-<meta name="description" content="Jakub Bittner — Security Infrastructure Lead. I build security platforms from scratch and lead the teams that run them. IBM, ex-Red Hat, NÚKIB.">
-<link rel="canonical" href="https://jakubbittner.cz/">
-<meta property="og:title" content="Jakub Bittner — Security Infrastructure Lead">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jakub Bittner: security infrastructure lead</title>
+<meta name="description" content="Jakub Bittner builds security platforms from scratch and leads the teams that run them. 17 years at Czech security agencies, Red Hat and IBM.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jakub Bittner: security infrastructure lead">
 <meta property="og:description" content="I build security platforms from scratch and lead the teams that run them. IBM, ex-Red Hat, NÚKIB.">
 <meta property="og:url" content="https://jakubbittner.cz/">
-<meta property="og:type" content="profile">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f172a'/><text x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%2338bdf8' text-anchor='middle'>JB</text></svg>">
+<meta property="og:image" content="https://jakubbittner.cz/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#a6b3bc">
+<link rel="canonical" href="https://jakubbittner.cz/">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
 <style>
-  :root {
-    --bg: #0b1120; --panel: #111a2e; --text: #e2e8f0; --muted: #94a3b8;
-    --accent: #38bdf8; --line: #1e293b;
-    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: light) {
-    :root { --bg: #f8fafc; --panel: #ffffff; --text: #0f172a; --muted: #475569; --accent: #0369a1; --line: #e2e8f0; }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 var(--sans); }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 24px 64px; }
-  nav { display: flex; justify-content: space-between; align-items: center; font: 13px var(--mono); color: var(--muted); }
-  nav .host { letter-spacing: .02em; }
-  .lang button { background: none; border: 1px solid var(--line); color: var(--muted); font: inherit; padding: 4px 10px; cursor: pointer; border-radius: 4px; }
-  .lang button[aria-pressed="true"] { color: var(--text); border-color: var(--accent); }
-  header { padding: 72px 0 40px; border-bottom: 1px solid var(--line); }
-  .eyebrow { font: 13px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: .12em; margin: 0 0 16px; }
-  h1 { font: 600 clamp(40px, 7vw, 60px)/1.05 var(--serif); margin: 0 0 20px; letter-spacing: -.01em; }
-  .lede { font-size: 20px; color: var(--muted); max-width: 34em; margin: 0; }
-  section { padding: 40px 0; border-bottom: 1px solid var(--line); }
-  h2 { font: 13px var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 0 0 24px; font-weight: 400; }
-  ol.timeline { list-style: none; margin: 0; padding: 0; }
-  .timeline li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; }
-  .timeline li + li { border-top: 1px dashed var(--line); }
-  .years { font: 14px var(--mono); color: var(--muted); padding-top: 3px; }
-  .role { font-weight: 600; }
-  .org { color: var(--muted); }
-  .note { font-size: 15px; color: var(--muted); margin-top: 4px; }
-  ul.focus { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-  ul.focus li { padding-left: 22px; position: relative; }
-  ul.focus li::before { content: ""; position: absolute; left: 0; top: .7em; width: 10px; height: 2px; background: var(--accent); }
-  .contact a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--accent); }
-  .contact a:hover { color: var(--accent); }
-  .contact p { margin: 0 0 8px; }
-  .about p { margin: 0 0 16px; max-width: 40em; }
-  .about p:last-child { margin-bottom: 0; }
-  ul.points { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 14px; }
-  ul.points li { padding-left: 22px; position: relative; }
-  ul.points li::before { content: ""; position: absolute; left: 0; top: .7em; width: 10px; height: 2px; background: var(--accent); }
-  ul.points strong { font-weight: 600; }
-  .tech { margin: 24px 0 0; font: 14px/1.7 var(--mono); color: var(--muted); }
-  footer { padding-top: 32px; font: 13px var(--mono); color: var(--muted); }
+:root {
+  --p-bg: #a6b3bc; --p-surface: #b2bdc5; --p-ink: #1c1c1c; --p-muted: #38424a;
+  --p-accent: #2c3620; --p-accent-ink: #e3e2da; --p-action: #2c3620; --p-action-ink: #e3e2da;
+  --p-inv-bg: #2c3620; --p-inv-surface: #39422d; --p-inv-ink: #ffffff; --p-inv-muted: #a8ada3;
+  --p-inv-accent: #ffffff; --p-inv-accent-ink: #2c3620; --p-inv-action: #ffffff; --p-inv-action-ink: #2c3620;
+  --font-display: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-text: "Schibsted Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.042em;
+  --ly-scale: 0.98;
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<style>
+  /* the language switch: both languages sit in the page, the other one is hidden */
   body [lang="en"] { display: none; }
   html.en body [lang="cs"] { display: none; }
   html.en body [lang="en"] { display: revert; }
-  @media (max-width: 560px) {
-    header { padding: 48px 0 32px; }
-    .timeline li { grid-template-columns: 1fr; gap: 2px; }
-  }
+  .lang { display: inline-flex; gap: var(--s-1); }
+  .lang button { font: inherit; font-weight: 500; font-size: 15px; background: none; border: 0; color: var(--muted); cursor: pointer; min-width: 44px; min-height: 44px; padding: 0 var(--s-2); }
+  .lang button[aria-pressed="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+  /* the tool tiles inside the focus section */
+  #focus .tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-6) var(--s-4); align-content: start; }
+  #focus .tool { display: grid; justify-items: start; gap: var(--s-3); }
+  #focus .tool span { font-size: var(--t-small); font-weight: 500; }
+  #focus .more { margin-top: var(--s-2); font-size: var(--t-small); color: var(--muted); }
+  #focus .focus-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-5); }
+  #focus .focus-list li { padding-bottom: var(--s-5); border-bottom: 1px solid var(--line); font-size: var(--t-h3); line-height: 1.25; }
+  #career .rows .rows__name { display: flex; align-items: center; gap: var(--s-3); }
+  #career .rows p { margin: 0; }
+  #career .rows__org, #career .rows__name span.rows__org { color: var(--ink); font-size: var(--t-small); }
+  #leadership .card svg { margin-bottom: var(--s-4); }
+  .closing__links .lang { margin-top: var(--s-2); }
+  @media (max-width: 1023px) { #career .rows .rows__name { flex-direction: column; align-items: flex-start; } }
+  .closing .mark--initial { width: 28px; height: 28px; font-size: 16px; border-radius: 7px; }
+  #leadership .lead { max-width: 52ch; }
+    @media (max-width: 639px) { #focus .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <nav>
-    <span class="host">jakubbittner.cz</span>
-    <span class="lang">
-      <button type="button" data-set="cs" aria-pressed="true">CZ</button>
-      <button type="button" data-set="en" aria-pressed="false">EN</button>
-    </span>
-  </nav>
+<!-- type: service (a person offered for hire; no photographs of him supplied, so the page is type, real tool icons and flat colour)
+     deal: hero statement (no photograph: the dealt `photo` hero cannot stand without one), nav-split without a panel (no pictures for cards),
+     footer-dark, close head row (close-photo re-dealt, no photograph), rhythm dark-band (leadership), buttons block, mark initial, palette blush-sage-slate, type schibsted
+     moments: word-highlight in #about (the statement) -->
 
-  <header>
-    <p class="eyebrow">Security Infrastructure Lead</p>
-    <h1>Jakub Bittner</h1>
-    <p class="lede" lang="cs">Stavím bezpečnostní platformy od nuly a vedu týmy, které je provozují. Sídlím v EU, pracuji s týmy po celém světě.</p>
-    <p class="lede" lang="en">I build security platforms from scratch, and I lead the teams that run them. Based in the EU, working with teams everywhere.</p>
-  </header>
-
-  <section class="about">
-    <h2 lang="cs">O mně</h2>
-    <h2 lang="en">About</h2>
-    <div lang="cs">
-      <p>17 let buduji a provozuji infrastrukturu, na které stojí bezpečnostní týmy. Nejdřív pro české státní bezpečnostní instituce (NBÚ, NÚKIB), pak pro globální bezpečnostní organizaci Red Hatu, která se v roce 2026 stala součástí IBM.</p>
-      <p>Vedu prakticky: vedl jsem malý tým inženýrů a sám jsem dál navrhoval a stavěl. Radši vychovám lidi, kteří mě nepotřebují, než abych byl úzkým hrdlem. V poslední době dělám svůj tým „AI-native“, protože AI vidím jako další úroveň automatizace, na které mi vždy záleželo. Zázemí v bezpečnosti je moje výhoda oproti typickému IT inženýrovi: vím, kde se věci lámou a jak je postavit bezpečně od začátku.</p>
+<header class="nav nav--split">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top" data-cs="Přeskočit na obsah" data-en="Skip to content">Skip to content</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="#about"><span lang="cs">O mně</span><span lang="en">About</span></a></div>
+      <div class="nav__item"><a class="nav__link" href="#career"><span lang="cs">Kariéra</span><span lang="en">Career</span></a></div>
+      <div class="nav__item"><a class="nav__link" href="#leadership"><span lang="cs">Vedení lidí</span><span lang="en">Leadership</span></a></div>
+      <div class="nav__item"><a class="nav__link" href="#focus"><span lang="cs">Zaměření</span><span lang="en">Focus</span></a></div>
+    </nav>
+    <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">J</span>Jakub Bittner</a>
+    <div class="nav__actions">
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-set="cs" aria-pressed="false">CZ</button>
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+      </span>
+      <a class="btn btn--primary" href="https://www.linkedin.com/in/jakubbittner" rel="me"><span lang="cs">Napsat na LinkedIn</span><span lang="en">Message me on LinkedIn</span></a>
     </div>
-    <div lang="en">
-      <p>For 17 years I have built and run the infrastructure that security teams depend on, first for Czech government security agencies (NBÚ, NÚKIB) and then for Red Hat's global Information Security organisation, which became part of IBM in 2026.</p>
-      <p>I lead hands-on: I led a small team of engineers and kept designing and building myself. I would rather grow people who do not need me than be a bottleneck. Lately I have been making my team AI-native, because I see AI as the next level of the automation I have always cared about. My security background is an edge over a typical IT engineer: I know where things break and how to build them safely from the start.</p>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--statement" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text hero__in">
+      <div>
+        <h1 id="hero-h"><span lang="cs">Vedoucí bezpečnostní infrastruktury, který staví od nuly</span><span lang="en">Security infrastructure lead who builds from scratch</span></h1>
+        <p class="hero__lead"><span lang="cs">Stavím bezpečnostní platformy od nuly a vedu týmy, které je provozují. 17 let pro české bezpečnostní úřady, Red Hat a IBM.</span><span lang="en">I build security platforms from scratch and lead the teams that run them. 17 years across Czech security agencies, Red Hat and IBM.</span></p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://www.linkedin.com/in/jakubbittner" rel="me"><span lang="cs">Napsat na LinkedIn</span><span lang="en">Message me on LinkedIn</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <a class="btn btn--secondary" href="#career"><span lang="cs">Projít kariéru</span><span lang="en">Read my career</span></a>
+        </div>
+      </div>
+      <dl class="hero__facts">
+        <div><dt><span lang="cs">Praxe</span><span lang="en">Experience</span></dt><dd><span lang="cs">17 let v bezpečnosti</span><span lang="en">17 years in security</span></dd></div>
+        <div><dt><span lang="cs">Vedl jsem</span><span lang="en">Led</span></dt><dd><span lang="cs">3 inženýry v Red Hatu</span><span lang="en">3 engineers at Red Hat</span></dd></div>
+        <div><dt><span lang="cs">Dnes</span><span lang="en">Now</span></dt><dd><span lang="cs">Security Consultant, IBM</span><span lang="en">Security Consultant, IBM</span></dd></div>
+        <div><dt><span lang="cs">Působím</span><span lang="en">Based</span></dt><dd><span lang="cs">EU, týmy po celém světě</span><span lang="en">EU, teams worldwide</span></dd></div>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="section statement" id="about" data-moment="word-highlight" aria-label="About">
+    <div class="wrap">
+      <p class="t-label"><span lang="cs">O mně</span><span lang="en">About</span></p>
+      <p class="mo-wh__text"><span lang="cs">Radši vychovám lidi, kteří mě nepotřebují, než abych byl úzkým hrdlem. Bezpečnost je moje výhoda oproti typickému IT inženýrovi: vím, kde se věci lámou, a umím je postavit <strong>bezpečně</strong> od začátku.</span><span lang="en">I would rather grow people who do not need me than be a bottleneck. Security is my edge over a typical IT engineer: I know where things break and how to build them <strong>safely</strong> from the start.</span></p>
     </div>
   </section>
 
-  <section class="about">
-    <h2 lang="cs">Vedení lidí</h2>
-    <h2 lang="en">Leadership</h2>
-    <div lang="cs">
-      <p>Založil jsem funkci bezpečnostní infrastruktury v rámci informační bezpečnosti Red Hatu. Identifikoval jsem potřebu, obhájil její smysl a následně tým vybudoval a vedl, nejdřív jako team leader a poté jako manažer (tři inženýři). Své vedení vnímám jako servant leadership: odstraňuji překážky, kryji tým, když je potíž, a rozvíjím lidi, dokud mě nepotřebují.</p>
-      <ul class="points">
-        <li><strong>Rozvoj lidí.</strong> Z praktikanta se stal inženýr na úrovni architekta, který určuje směr automatizace týmu. Z juniorního kolegy vedoucí naší práce na OpenShiftu. Člověk bez zkušeností z IT vlastnil do roka svůj vlastní projekt.</li>
-        <li><strong>Vedení přes změnu.</strong> Když se tým přesouval z Red Hatu do IBM, udržel jsem ho soustředěný a produktivní.</li>
-        <li><strong>Vyjednávání, ne přikazování.</strong> Věci se dějí dohodou priorit s ostatními týmy a kompromisem, který všechny posune dál.</li>
-      </ul>
+  <section class="section" id="career" style="--hm: 2" aria-labelledby="career-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="career-h"><span lang="cs">Od správce Linuxu po vedení týmu. <span class="muted">Šest rolí za 17 let.</span></span><span lang="en">From Linux administrator to team lead. <span class="muted">Six roles in 17 years.</span></span></h2></div>
+      <div class="grid grid--top">
+        <ul class="rows span-6">
+          <li><span class="rows__name"><span class="ic-tile ic-tile--40"><img class="ic" src="assets/icons/ibm.svg" alt="" width="24" height="24"></span><span>Security Consultant<br><span class="rows__org">IBM</span></span></span><span class="rows__value">2026 –</span></li>
+          <li><span class="rows__name"><span class="ic-tile ic-tile--40"><img class="ic" src="assets/icons/redhat.svg" alt="" width="24" height="24"></span><span>Manager, Security Infrastructure<br><span class="rows__org">Red Hat</span></span></span><span class="rows__value">2023 – 2026</span></li>
+          <li><span class="rows__name"><span class="ic-tile ic-tile--40"><img class="ic" src="assets/icons/redhat.svg" alt="" width="24" height="24"></span><span>Security Infrastructure Team Leader<br><span class="rows__org">Red Hat</span></span></span><span class="rows__value">2021 – 2023</span></li>
+          <li><span class="rows__name"><span class="ic-tile ic-tile--40"><img class="ic" src="assets/icons/redhat.svg" alt="" width="24" height="24"></span><span>Senior Information Security Analyst<br><span class="rows__org">Red Hat</span></span></span><span class="rows__value">2017 – 2023</span></li>
+          <li><span class="rows__name"><span>Cyber Security Analyst<br><span class="rows__org"><span lang="cs">NÚKIB, Národní úřad pro kybernetickou a informační bezpečnost</span><span lang="en">NÚKIB, National Cyber and Information Security Agency</span></span></span></span><span class="rows__value">2016 – 2017</span></li>
+          <li><span class="rows__name"><span>Linux Administrator<br><span class="rows__org"><span lang="cs">NBÚ, Národní bezpečnostní úřad</span><span lang="en">NBÚ, National Security Authority</span></span></span></span><span class="rows__value">2009 – 2016</span></li>
+        </ul>
+        <div class="span-6 start-7 stack-5">
+          <p class="t-label muted"><span lang="cs">Vzdělání</span><span lang="en">Education</span></p>
+          <ul class="rows">
+            <li><span class="rows__name"><span><span lang="cs">Ing., Podnikové řízení</span><span lang="en">Ing., Business Management</span><br><span class="rows__org"><span lang="cs">Masarykova univerzita</span><span lang="en">Masaryk University</span></span></span></span></li>
+            <li><span class="rows__name"><span><span lang="cs">Bc., Veřejná správa</span><span lang="en">Bc., Public Administration</span><br><span class="rows__org"><span lang="cs">Masarykova univerzita</span><span lang="en">Masaryk University</span></span></span></span></li>
+            <li><span class="rows__name"><span>Juniata College, USA<br><span class="rows__org"><span lang="cs">Studijní semestr, Business Management &amp; Communication</span><span lang="en">Exchange semester, Business Management &amp; Communication</span></span></span></span></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div lang="en">
-      <p>I established the Security Infrastructure function within Red Hat's Information Security organisation. I identified the need, made the case for it, then built the team and led it, first as team leader and then as manager (three engineers). I see my leadership as servant leadership: I remove obstacles, shield the team when there is trouble, and grow people until they no longer need me.</p>
-      <ul class="points">
-        <li><strong>Growing people.</strong> An intern became an architect-level engineer who sets the team's automation direction. A junior hire grew into the lead of our OpenShift work. A career changer with no IT background owns her own project within a year.</li>
-        <li><strong>Leading through change.</strong> When the team moved from Red Hat to IBM, I kept it focused and productive through the transition.</li>
-        <li><strong>Negotiating, not commanding.</strong> I get things done by agreeing priorities with other teams and finding the compromise that moves everyone.</li>
-      </ul>
+  </section>
+
+  <section class="section ground-inverse" id="leadership" style="--hm: 2" aria-labelledby="leadership-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="leadership-h"><span lang="cs">Vedení lidí: založil jsem funkci a vychoval její lidi</span><span lang="en">Leadership: I founded the function and grew its people</span></h2>
+        <p class="lead"><span lang="cs">Identifikoval jsem potřebu bezpečnostní infrastruktury v Red Hatu, obhájil její smysl a postavil tým: nejdřív jako team leader, pak jako manažer tří inženýrů. Vedu jako servant leader: odstraňuji překážky, kryji tým, když je potíž, a rozvíjím lidi, dokud mě nepotřebují.</span><span lang="en">I saw the need for security infrastructure at Red Hat, made the case for it and built the team, first as team leader and then as manager of three engineers. I lead as a servant leader: I remove obstacles, shield the team when there is trouble and grow people until they no longer need me.</span></p></div>
+      <div class="grid">
+        <article class="card span-4"><svg class="ic ic-svg ic-32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></g></svg><h3><span lang="cs">Rozvoj lidí</span><span lang="en">Growing people</span></h3><p><span lang="cs">Z praktikanta se stal inženýr na úrovni architekta, který určuje směr automatizace týmu. Z juniorního kolegy vedoucí naší práce na OpenShiftu. Člověk bez zkušeností z IT vlastnil do roka svůj vlastní projekt.</span><span lang="en">An intern became an architect-level engineer who sets the team's automation direction. A junior hire grew into the lead of our OpenShift work. A career changer with no IT background owned a project of her own within a year.</span></p></article>
+        <article class="card span-4"><svg class="ic ic-svg ic-32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9a9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5m5 4a9 9 0 0 1-9 9a9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></g></svg><h3><span lang="cs">Vedení přes změnu</span><span lang="en">Leading through change</span></h3><p><span lang="cs">Když se tým přesouval z Red Hatu do IBM, udržel jsem ho soustředěný a produktivní.</span><span lang="en">When the team moved from Red Hat to IBM, I kept it focused and productive through the transition.</span></p></article>
+        <article class="card span-4"><svg class="ic ic-svg ic-32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m11 17l2 2a1 1 0 1 0 3-3"/><path d="m14 14l2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3l1 11h-2M3 3L2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"/></g></svg><h3><span lang="cs">Vyjednávání, ne přikazování</span><span lang="en">Negotiating, not commanding</span></h3><p><span lang="cs">Věci se dějí dohodou priorit s ostatními týmy a kompromisem, který všechny posune dál.</span><span lang="en">I get things done by agreeing priorities with other teams and finding the compromise that moves everyone.</span></p></article>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2 lang="cs">Kariéra</h2>
-    <h2 lang="en">Experience</h2>
-    <ol class="timeline">
-      <li>
-        <span class="years">2026 —</span>
-        <div>
-          <div class="role">Security Consultant</div>
-          <div class="org">IBM</div>
+  <section class="section" id="focus" style="--hm: 2" aria-labelledby="focus-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="focus-h"><span lang="cs">Zaměření a nástroje</span><span lang="en">Focus areas and tools</span></h2></div>
+      <div class="grid grid--top">
+        <ul class="focus-list span-6">
+          <li><span lang="cs">Bezpečnostní infrastruktura a architektura ve velkém měřítku</span><span lang="en">Security infrastructure and architecture at scale</span></li>
+          <li><span lang="cs">Budování a vedení bezpečnostních týmů</span><span lang="en">Building and leading security teams</span></li>
+          <li><span lang="cs">Automatizace, infrastruktura jako kód a GitOps</span><span lang="en">Automation, infrastructure as code and GitOps</span></li>
+          <li><span lang="cs">AI a automatizace v IT, s bezpečností jako výhodou navíc</span><span lang="en">AI and automation across IT, with security as an added advantage</span></li>
+          <li><span lang="cs">Bezpečnost ve státní správě i ve firmách</span><span lang="en">Government and corporate security</span></li>
+        </ul>
+        <div class="span-6 start-7">
+          <div class="tools" role="group" aria-label="Tools">
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/redhat.svg" alt="" width="40" height="40"></span><span>RHEL, Satellite</span></div>
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/ansible.svg" alt="" width="40" height="40"></span><span>Ansible</span></div>
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/openshift.svg" alt="" width="40" height="40"></span><span>OpenShift</span></div>
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/kubernetes.svg" alt="" width="40" height="40"></span><span>Kubernetes</span></div>
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/argo.svg" alt="" width="40" height="40"></span><span>Argo CD</span></div>
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/helm.svg" alt="" width="40" height="40"></span><span>Helm</span></div>
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/gitlab.svg" alt="" width="40" height="40"></span><span>GitLab CI/CD</span></div>
+            <div class="tool"><span class="ic-tile ic-tile--72"><img class="ic" src="assets/icons/linux-tux.svg" alt="" width="40" height="40"></span><span>Linux</span></div>
+            <p class="more" style="grid-column: 1 / -1">Arkime · Suricata · Zabbix · <span lang="cs">AI kódovací agenti</span><span lang="en">AI coding agents</span></p>
+          </div>
         </div>
-      </li>
-      <li>
-        <span class="years">2023 — 2026</span>
-        <div>
-          <div class="role">Manager, Security Infrastructure</div>
-          <div class="org">Red Hat</div>
-        </div>
-      </li>
-      <li>
-        <span class="years">2021 — 2023</span>
-        <div>
-          <div class="role">Security Infrastructure Team Leader</div>
-          <div class="org">Red Hat</div>
-        </div>
-      </li>
-      <li>
-        <span class="years">2017 — 2023</span>
-        <div>
-          <div class="role">Senior Information Security Analyst</div>
-          <div class="org">Red Hat</div>
-          <div class="note" lang="cs">Začínal jsem jako Information Security Analyst.</div>
-          <div class="note" lang="en">Started as Information Security Analyst.</div>
-        </div>
-      </li>
-      <li>
-        <span class="years">2016 — 2017</span>
-        <div>
-          <div class="role">Cyber Security Analyst</div>
-          <div class="org" lang="cs">NÚKIB (Národní úřad pro kybernetickou a informační bezpečnost)</div>
-          <div class="org" lang="en">NÚKIB (National Cyber and Information Security Agency)</div>
-        </div>
-      </li>
-      <li>
-        <span class="years">2009 — 2016</span>
-        <div>
-          <div class="role">Linux Administrator</div>
-          <div class="org" lang="cs">NBÚ (Národní bezpečnostní úřad)</div>
-          <div class="org" lang="en">NBÚ (National Security Authority)</div>
-        </div>
-      </li>
-    </ol>
+      </div>
+    </div>
   </section>
+</main>
 
-  <section>
-    <h2 lang="cs">Čemu se věnuji</h2>
-    <h2 lang="en">Focus</h2>
-    <ul class="focus" lang="cs">
-      <li>Bezpečnostní infrastruktura a architektura ve velkém měřítku</li>
-      <li>Budování a vedení bezpečnostních týmů</li>
-      <li>Automatizace, infrastruktura jako kód a GitOps</li>
-      <li>AI a automatizace v IT, s bezpečností jako výhodou navíc</li>
-      <li>Bezpečnost ve státní správě i ve firmách</li>
-    </ul>
-    <ul class="focus" lang="en">
-      <li>Security infrastructure and architecture at scale</li>
-      <li>Building and leading security teams</li>
-      <li>Automation, infrastructure as code and GitOps</li>
-      <li>AI and automation across IT, with security as an added advantage</li>
-      <li>Government and corporate security</li>
-    </ul>
-    <p class="tech">RHEL · Red Hat Satellite · Ansible · OpenShift / Kubernetes · Argo CD · Helm · GitLab CI/CD · Arkime · Suricata · Zabbix · AI coding agents</p>
-  </section>
-
-  <section>
-    <h2 lang="cs">Vzdělání</h2>
-    <h2 lang="en">Education</h2>
-    <ol class="timeline">
-      <li>
-        <span class="years">Ing.</span>
-        <div>
-          <div class="role" lang="cs">Podnikové řízení</div>
-          <div class="role" lang="en">Business Management</div>
-          <div class="org" lang="cs">Masarykova univerzita</div>
-          <div class="org" lang="en">Masaryk University</div>
+<footer class="footer closing g2m" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head--split">
+        <div><h2 id="close-h"><span lang="cs">Pojďme probrat bezpečnostní infrastrukturu</span><span lang="en">Let's talk security infrastructure</span></h2><p class="t-lead"><span lang="cs">Rád si popovídám o bezpečnostní infrastruktuře, automatizaci a AI.</span><span lang="en">Happy to talk about security infrastructure, automation and AI.</span></p></div>
+        <a class="btn btn--primary" href="https://www.linkedin.com/in/jakubbittner" rel="me"><span lang="cs">Napsat na LinkedIn</span><span lang="en">Message me on LinkedIn</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-6 stack-4">
+          <a class="nav__logo" href="#top">Jakub Bittner</a>
+          <p class="footer__lede"><span lang="cs">Stavím bezpečnostní platformy a vedu týmy, které je provozují.</span><span lang="en">Security platforms, and the teams that run them.</span></p>
         </div>
-      </li>
-      <li>
-        <span class="years">Bc.</span>
-        <div>
-          <div class="role" lang="cs">Veřejná správa</div>
-          <div class="role" lang="en">Public Administration</div>
-          <div class="org" lang="cs">Masarykova univerzita</div>
-          <div class="org" lang="en">Masaryk University</div>
-        </div>
-      </li>
-      <li>
-        <span class="years" lang="cs">stáž</span>
-        <span class="years" lang="en">exchange</span>
-        <div>
-          <div class="role">Juniata College, USA</div>
-          <div class="org" lang="cs">Studijní semestr, Business Management &amp; Communication</div>
-          <div class="org" lang="en">Exchange semester, Business Management &amp; Communication</div>
-        </div>
-      </li>
-    </ol>
-  </section>
+        <div class="span-3 start-7 footer__col"><h3><span lang="cs">Na stránce</span><span lang="en">On this page</span></h3><ul>
+          <li><a href="#about"><span lang="cs">O mně</span><span lang="en">About</span></a></li><li><a href="#career"><span lang="cs">Kariéra</span><span lang="en">Career</span></a></li><li><a href="#leadership"><span lang="cs">Vedení lidí</span><span lang="en">Leadership</span></a></li><li><a href="#focus"><span lang="cs">Zaměření</span><span lang="en">Focus</span></a></li></ul></div>
+        <div class="span-3 footer__col"><h3><span lang="cs">Kontakt</span><span lang="en">Contact</span></h3><ul>
+          <li><a href="https://www.linkedin.com/in/jakubbittner" rel="me">LinkedIn</a></li>
+          <li><a href="https://github.com/rexcze" rel="me">GitHub</a></li>
+          <li id="mail-row" hidden><a id="mail" href="#">E-mail</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span class="lang" role="group" aria-label="Language"><button type="button" data-set="cs" aria-pressed="false">CZ</button><button type="button" data-set="en" aria-pressed="true">EN</button></span>
+        <span>&copy; <span id="y">2026</span> Jakub Bittner &nbsp; <span lang="cs">Názory jsou moje osobní.</span><span lang="en">Views are my own.</span></span>
+        <span><span lang="cs">Názvy a loga produktů jsou ochranné známky jejich vlastníků.</span><span lang="en">Product names and logos are trademarks of their owners.</span></span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <section class="contact">
-    <h2 lang="cs">Kontakt</h2>
-    <h2 lang="en">Contact</h2>
-    <p lang="cs">Rád si popovídám o bezpečnostní infrastruktuře, automatizaci a AI.</p>
-    <p lang="en">Happy to talk about security infrastructure, automation and AI.</p>
-    <p><a href="https://www.linkedin.com/in/jakubbittner" rel="me">LinkedIn — linkedin.com/in/jakubbittner</a></p>
-    <p><a href="https://github.com/rexcze" rel="me">GitHub — github.com/rexcze</a></p>
-    <p id="mail-row" hidden><a id="mail" href="#">E-mail</a></p>
-    <p lang="cs">Sídlím v EU, pracuji s týmy po celém světě.</p>
-    <p lang="en">Based in the EU, working with teams everywhere.</p>
-  </section>
+<nav class="actionbar" aria-label="Quick actions"><a class="btn btn--primary" href="https://www.linkedin.com/in/jakubbittner" rel="me"><span lang="cs">Napsat na LinkedIn</span><span lang="en">Message me on LinkedIn</span></a></nav>
 
-  <footer>© <span id="y">2026</span> Jakub Bittner · <span lang="cs">Názory jsou moje osobní.</span><span lang="en">Views are my own.</span></footer>
-</div>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
 <script>
   (function () {
     var root = document.documentElement;
     function set(l) {
       root.classList.toggle('en', l === 'en');
       root.lang = l;
-      document.querySelectorAll('.lang button').forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.dataset.set === l));
-      });
+      document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+      document.querySelectorAll('[data-cs]').forEach(function (e) { var t = e.getAttribute('data-' + l); if (e.matches('a')) e.textContent = t; else e.setAttribute('aria-label', t); });
       try { localStorage.setItem('lang', l); } catch (e) {}
     }
     var saved = null;
     try { saved = localStorage.getItem('lang'); } catch (e) {}
     set(saved || ((navigator.language || 'cs').slice(0, 2) === 'cs' ? 'cs' : 'en'));
-    document.querySelectorAll('.lang button').forEach(function (b) {
-      b.addEventListener('click', function () { set(b.dataset.set); });
-    });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
     document.getElementById('y').textContent = new Date().getFullYear();
     var m = document.getElementById('mail');
     var addr = ['rexcze', 'gmail.com'].join('@');
     m.href = 'mailto:' + addr;
-    m.textContent = 'E-mail — ' + addr;
+    m.textContent = addr;
     document.getElementById('mail-row').hidden = false;
   })();
 </script>

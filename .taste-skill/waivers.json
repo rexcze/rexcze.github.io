@@ -1,0 +1,6 @@
+[
+ {"check":"no-visual","target":"section#career","reason":"no photographs of the person were supplied; the section is a dated list with the real Red Hat and IBM marks, a photograph comes when Kuba supplies one"},
+ {"check":"no-visual","target":"section#leadership","reason":"no photographs of the person or team were supplied; the section is type on the dark band with three glyph cards"},
+ {"check":"no-visual","target":"section#focus","reason":"the section shows eight real full-colour tool icons in tiles; the checker wants a photograph or UI mock the brief does not have"},
+ {"check":"assets","target":"the page","reason":"the site's own cookieless analytics beacon is blocked by the sandbox's egress policy only; it loads in production"}
+]
