@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" class="en" data-type="service" data-radius="soft" data-buttons="block" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Talks · Jakub Bittner</title>
+<meta name="description" content="Talks and presentations by Jakub Bittner: slides in English and Czech.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talks · Jakub Bittner">
+<meta property="og:description" content="Talks and presentations, with slides in English and Czech.">
+<meta property="og:url" content="https://jakubbittner.cz/talks/">
+<meta property="og:image" content="https://jakubbittner.cz/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#a6b3bc">
+<link rel="canonical" href="https://jakubbittner.cz/talks/">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/system.css">
+<link rel="stylesheet" href="../assets/ui/cards.css">
+<link rel="stylesheet" href="../assets/motion/motion.css">
+<link rel="stylesheet" href="../assets/layout/layout.css">
+<style>
+:root {
+  --p-bg: #a6b3bc; --p-surface: #b2bdc5; --p-ink: #1c1c1c; --p-muted: #38424a;
+  --p-accent: #2c3620; --p-accent-ink: #e3e2da; --p-action: #2c3620; --p-action-ink: #e3e2da;
+  --p-inv-bg: #2c3620; --p-inv-surface: #39422d; --p-inv-ink: #ffffff; --p-inv-muted: #a8ada3;
+  --p-inv-accent: #ffffff; --p-inv-accent-ink: #2c3620; --p-inv-action: #ffffff; --p-inv-action-ink: #2c3620;
+  --font-display: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-text: "Schibsted Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.042em;
+  --ly-scale: 0.98;
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<style>
+  body [lang="en"] { display: none; }
+  html.en body [lang="cs"] { display: none; }
+  html.en body [lang="en"] { display: revert; }
+  .lang { display: inline-flex; gap: var(--s-1); }
+  .lang button { font: inherit; font-weight: 500; font-size: 15px; background: none; border: 0; color: var(--muted); cursor: pointer; min-width: 44px; min-height: 44px; padding: 0 var(--s-2); }
+  .lang button[aria-pressed="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+  .talk-cover { display: block; width: 100%; height: auto; border-radius: var(--r-card, 16px); box-shadow: 0 18px 40px rgba(0,0,0,.18); }
+  .talk-meta { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); color: var(--muted); }
+  .decks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-4); }
+  .deck { background: var(--surface); border-radius: var(--r-card, 16px); padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-4); }
+  .deck h3 { margin: 0; }
+  .talk-block { padding-block: clamp(40px, 7vw, 96px); }
+  .talk-hero { padding-top: 128px; }
+  .talk-block + .talk-block { border-top: 1px solid rgba(28,28,28,.12); }
+  .talk-hero h1 { font-size: clamp(44px, 6vw, 84px); line-height: 1.02; margin: 0; hyphens: manual; -webkit-hyphens: manual; }
+  .talk-foot { padding-block: 32px 48px; border-top: 1px solid rgba(28,28,28,.12); color: var(--muted); }
+  .talk-foot__row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .talk-foot a { color: inherit; }
+  .points { display: grid; gap: var(--s-3); padding-left: 1.2em; margin: 0; }
+  .talk-list { display: grid; gap: var(--s-4); }
+  .talk-card { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-5); align-items: center; background: var(--surface); border-radius: var(--r-card, 16px); padding: var(--s-5); }
+  .talk-card img { display: block; width: 100%; height: auto; border-radius: 12px; }
+  .talk-card h2 { margin: 0; font-size: var(--t-h2, 32px); }
+  @media (max-width: 767px) { .talk-card { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav nav--split">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top" data-cs="Přeskočit na obsah" data-en="Skip to content">Skip to content</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="../"><span lang="cs">← Domů</span><span lang="en">← Home</span></a></div>
+    </nav>
+    <a class="nav__logo" href="../"><span class="mark mark--initial" aria-hidden="true">J</span>Jakub Bittner</a>
+    <div class="nav__actions">
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-set="cs" aria-pressed="false">CZ</button>
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+      </span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="talk-block talk-hero" aria-labelledby="talks-h">
+    <div class="wrap stack-5">
+      <h1 id="talks-h"><span lang="cs">Přednášky</span><span lang="en">Talks</span></h1>
+      <p class="t-lead"><span lang="cs">Prezentace z konferencí a setkání. Slidy jsou česky i anglicky, jako webová stránka i PDF.</span><span lang="en">Presentations from conferences and meetups. Slides in Czech and English, as a web page and PDF.</span></p>
+    </div>
+  </div>
+  <div class="talk-block">
+    <div class="wrap talk-list">
+      <article class="talk-card">
+        <a href="excert-3/" lang="en"><img src="excert-3/cover-en.jpg" width="1200" height="675" alt="Title slide: AI in Everyday Practice" loading="lazy"></a>
+        <a href="excert-3/" lang="cs"><img src="excert-3/cover-cs.jpg" width="1200" height="675" alt="Úvodní slide prezentace AI v každodenní praxi" loading="lazy"></a>
+        <div class="stack-4">
+          <p class="t-label"><span lang="cs">ExCERT #3 · Brno · 24. 11. 2026</span><span lang="en">ExCERT #3 · Brno · 24 Nov 2026</span></p>
+          <h2><span lang="cs">AI v každodenní praxi</span><span lang="en">AI in Everyday Practice</span></h2>
+          <p class="t-body"><span lang="cs">Jak jsme zavedli AI do práce týmu bezpečnostní infrastruktury: od chatbota přes wiki, kterou čte člověk i agent, až po home repo. A jak to celé držíme bezpečné.</span><span lang="en">How our security infrastructure team brought AI into everyday work: from a chatbot to a wiki that both humans and agents read, to a home repo. And how we keep it all safe.</span></p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="excert-3/"><span lang="cs">Detail a slidy</span><span lang="en">Details and slides</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="talk-foot">
+  <div class="wrap talk-foot__row">
+    <span>&copy; <span id="y">2026</span> <a href="../">Jakub Bittner</a> · <a href="https://www.linkedin.com/in/jakubbittner" rel="me">LinkedIn</a></span>
+    <span class="lang" role="group" aria-label="Language"><button type="button" data-set="cs" aria-pressed="false">CZ</button><button type="button" data-set="en" aria-pressed="true">EN</button></span>
+  </div>
+</footer>
+
+<script type="module" src="../assets/system.js"></script>
+<script type="module" src="../assets/motion/motion.js"></script>
+<script type="module" src="../assets/layout/layout.js"></script>
+<script>
+  (function () {
+    var root = document.documentElement;
+    function set(l) {
+      root.classList.toggle('en', l === 'en');
+      root.lang = l;
+      document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+      document.querySelectorAll('[data-cs]').forEach(function (e) { var t = e.getAttribute('data-' + l); if (e.matches('a')) e.textContent = t; else e.setAttribute('aria-label', t); });
+      try { localStorage.setItem('lang', l); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'cs' || q === 'en') saved = q;
+    set(saved || ((navigator.language || 'cs').slice(0, 2) === 'cs' ? 'cs' : 'en'));
+    document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set); }); });
+    document.getElementById('y').textContent = new Date().getFullYear();
+  })();
+</script>
+<!-- Cloudflare Web Analytics (cookieless) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "575ea0f885684153b98e15616776df1f"}'></script>
+</body>
+</html>
