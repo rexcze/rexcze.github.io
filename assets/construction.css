@@ -1,0 +1,13 @@
+/* "Under construction" note: a small pill fixed to the bottom-right corner.
+   Remove the <div class="uc-note"> from the pages (and this file) once the site is finished. */
+.uc-note {
+  position: fixed; right: 16px; bottom: 16px; z-index: 100;
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px 10px 14px; border-radius: 999px;
+  background: #2c3620; color: #e3e2da;
+  font: 500 13px/1.2 var(--font-text, system-ui, sans-serif);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+  pointer-events: none;
+}
+.uc-note::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #e0b83a; flex: none; }
+@media print { .uc-note { display: none; } }
